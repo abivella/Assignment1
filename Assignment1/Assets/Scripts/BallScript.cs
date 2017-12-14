@@ -8,7 +8,9 @@ public class BallScript : MonoBehaviour {
     public Player2PaddleScript paddlePlayer2;
     Vector3 paddleBallPosDiff;
     bool gameStart = false;
-
+    public int player1Score = 0;
+    public int player2Score = 0;
+    public float speed;
 
     // Use this for initialization
     void Start () {
@@ -16,11 +18,25 @@ public class BallScript : MonoBehaviour {
         paddlePlayer1 = GameObject.FindObjectOfType<Player1PaddleScript>();
 
         paddleBallPosDiff = this.transform.position - paddlePlayer1.transform.position;
-
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
+        ballStart();
+    }
+
+    public void ballStart()
+    {
+        //paddlePlayer1 = GameObject.FindObjectOfType<Player1PaddleScript>();
+
+       // paddleBallPosDiff = this.transform.position - paddlePlayer1.transform.position;
+
+        //this.transform.position = paddlePlayer1.transform.position + paddleBallPosDiff;
+
+        //on start scene, start ball movement
+        //this.GetComponent<Rigidbody2D>().velocity = new Vector2(5f, -1f);
+
+
         if (!gameStart) //if(gameStart==false)
         {
             this.transform.position = paddlePlayer1.transform.position + paddleBallPosDiff;
@@ -29,8 +45,10 @@ public class BallScript : MonoBehaviour {
         if (!gameStart && Input.GetMouseButtonDown(0))
         {
             gameStart = true;
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(5f, -1f);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(speed, -1f);
         }
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,12 +56,29 @@ public class BallScript : MonoBehaviour {
         string colName = collision.collider.name;
 
         if (gameStart && (colName == "PaddlePlayer1" || colName == "PaddlePlayer2" || colName == "TopBorder" || colName == "BottomBorder" || colName == "RightBorder1" || colName == "RightBorder2" || colName == "LeftBorder1" || colName == "LeftBorder2"))
-        //if (gameStart && collision.collider.tag != "Breakable")
         {
             //GetComponent<AudioSource>().Play();
             Vector2 tweak = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(0f, 0.2f));
             this.GetComponent<Rigidbody2D>().velocity += tweak;
         }
-
     }
+
+
+
+
+
+    /*if (!gameStart) //if(gameStart==false)
+        {
+            this.transform.position = paddlePlayer1.transform.position + paddleBallPosDiff;
+        }
+
+        if (!gameStart && Input.GetMouseButtonDown(0))
+        {
+            gameStart = true;
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(5f, -1f);
+        }*/
+
+    //paddlePlayer1 = GameObject.FindObjectOfType<Player1PaddleScript>();
+
+    //paddleBallPosDiff = this.transform.position - paddlePlayer1.transform.position;
 }
