@@ -52,6 +52,7 @@
      <Compile Include="Assets\Resources\Scripts\Player1ScoreScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Player2PaddleScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Player2ScoreScript.cs" />
+     <Compile Include="Assets\Resources\Scripts\WinTextScript.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>F:/School/2nd Year/Programming for Computer Games/Assignment 1/Assignment1/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>

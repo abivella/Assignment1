@@ -6,14 +6,12 @@ using UnityEngine.SceneManagement;
 public class Player2ScoreScript : MonoBehaviour {
 
     BallScript BallScript = new BallScript();
-    static int player2Score;
+    LevelManager levelManager = new LevelManager();   
     public GameObject ball;
-    private Vector3 initialPosition;
     public int speed;
+    public static int player2Score;
     int goal;
-
-    LevelManager levelManager = new LevelManager();
-
+    private Vector3 initialPosition;
 
     // Use this for initialization
     void Start () {

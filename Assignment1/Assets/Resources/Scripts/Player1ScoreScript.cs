@@ -5,14 +5,13 @@ using UnityEngine;
 public class Player1ScoreScript : MonoBehaviour {
 
     BallScript ballScript = new BallScript();
+    LevelManager levelManager = new LevelManager();
     public Player1PaddleScript paddlePlayer1;
     public GameObject ball;
-    static int player1Score;
-    int goal;
     public int speed;
+    public static int player1Score;
+    int goal;
     private Vector3 initialPosition;
-
-    LevelManager levelManager = new LevelManager();
 
     // Use this for initialization
     void Start () {
@@ -25,7 +24,7 @@ public class Player1ScoreScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(goal == 3)
+        if (goal == 3)
         {
             levelManager.LoadNextScene();
         }
@@ -51,7 +50,8 @@ public class Player1ScoreScript : MonoBehaviour {
         {
             player1Score += 3;
         }
-       
+
+        print("Goal: " + goal);
         print("Player 1 Score: " + player1Score);
 
         ball.transform.position = initialPosition;
