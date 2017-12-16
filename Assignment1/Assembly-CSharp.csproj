@@ -46,12 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BallScript.cs" />
-     <Compile Include="Assets\Scripts\LevelManager.cs" />
-     <Compile Include="Assets\Scripts\Player1PaddleScript.cs" />
-     <Compile Include="Assets\Scripts\Player1ScoreScript.cs" />
-     <Compile Include="Assets\Scripts\Player2PaddleScript.cs" />
-     <Compile Include="Assets\Scripts\Player2ScoreScript.cs" />
+     <Compile Include="Assets\Resources\Scripts\BallScript.cs" />
+     <Compile Include="Assets\Resources\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\Player1PaddleScript.cs" />
+     <Compile Include="Assets\Resources\Scripts\Player1ScoreScript.cs" />
+     <Compile Include="Assets\Resources\Scripts\Player2PaddleScript.cs" />
+     <Compile Include="Assets\Resources\Scripts\Player2ScoreScript.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>F:/School/2nd Year/Programming for Computer Games/Assignment 1/Assignment1/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
