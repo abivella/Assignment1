@@ -31,4 +31,9 @@ public class LevelManager : MonoBehaviour {
         UnityEditor.EditorApplication.isPlaying = false;
     }
 
+    public string GetScene()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
+
 }

@@ -1,25 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player1ScoreScript : MonoBehaviour {
 
     BallScript ballScript = new BallScript();
-
     public Player1PaddleScript paddlePlayer1;
-    Vector3 paddleBallPosDiff;
-
     public GameObject ball;
-
-    public int maxScore;
-    int player1Score;
-
-    bool gameStart = false;
-
+    static int player1Score;
+    int goal;
+    public int speed;
     private Vector3 initialPosition;
-
-    public float speed;
 
     LevelManager levelManager = new LevelManager();
 
@@ -28,13 +19,13 @@ public class Player1ScoreScript : MonoBehaviour {
 
         Vector2 zero = new Vector2(0, 0);
         initialPosition = zero;
-        print(zero);
+        //print(zero);
         ball = GameObject.FindGameObjectWithTag("ball");
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if(player1Score == 5)
+        if(goal == 3)
         {
             levelManager.LoadNextScene();
         }
@@ -47,8 +38,20 @@ public class Player1ScoreScript : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-
-        player1Score++;
+        goal++;
+        if(levelManager.GetScene() == "Level1")
+        {
+            player1Score++;
+        }
+        else if(levelManager.GetScene() == "Level2")
+        {
+            player1Score += 2;
+        }
+        else if(levelManager.GetScene() == "Level3")
+        {
+            player1Score += 3;
+        }
+       
         print("Player 1 Score: " + player1Score);
 
         ball.transform.position = initialPosition;

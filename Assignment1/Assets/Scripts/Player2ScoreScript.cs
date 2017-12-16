@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class Player2ScoreScript : MonoBehaviour {
 
     BallScript BallScript = new BallScript();
-    public int maxScore;
-    int player2Score;
+    static int player2Score;
     public GameObject ball;
     private Vector3 initialPosition;
-    public float speed;
+    public int speed;
+    int goal;
 
     LevelManager levelManager = new LevelManager();
 
@@ -20,7 +20,7 @@ public class Player2ScoreScript : MonoBehaviour {
 
         Vector2 zero = new Vector2(0, 0);
         initialPosition = zero;
-        print(zero);
+        //print(zero);
         ball = GameObject.FindGameObjectWithTag("ball");
     }
 	
@@ -39,6 +39,20 @@ public class Player2ScoreScript : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        goal++;
+        if (levelManager.GetScene() == "Level1")
+        {
+            player2Score++;
+        }
+        else if (levelManager.GetScene() == "Level2")
+        {
+            player2Score += 2;
+        }
+        else if (levelManager.GetScene() == "Level3")
+        {
+            player2Score += 3;
+        }
+
         player2Score++;
         print("Player 2 Score: " + player2Score);
 
