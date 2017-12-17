@@ -28,15 +28,6 @@ public class BallScript : MonoBehaviour {
 
     public void ballStart()
     {
-        //paddlePlayer1 = GameObject.FindObjectOfType<Player1PaddleScript>();
-
-       // paddleBallPosDiff = this.transform.position - paddlePlayer1.transform.position;
-
-        //this.transform.position = paddlePlayer1.transform.position + paddleBallPosDiff;
-
-        //on start scene, start ball movement
-        //this.GetComponent<Rigidbody2D>().velocity = new Vector2(5f, -1f);
-
 
         if (!gameStart) //if(gameStart==false)
         {
@@ -58,7 +49,6 @@ public class BallScript : MonoBehaviour {
 
         if (gameStart && (colName == "PaddlePlayer1" || colName == "PaddlePlayer2" || colName == "TopBorder" || colName == "BottomBorder" || colName == "RightBorder1" || colName == "RightBorder2" || colName == "LeftBorder1" || colName == "LeftBorder2" || colName == "Obstacle1" || colName == "Obstacle (1)"))
         {
-            //GetComponent<AudioSource>().Play();
             Vector2 tweak = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(0f, 0.2f));
             this.GetComponent<Rigidbody2D>().velocity += tweak;
         }

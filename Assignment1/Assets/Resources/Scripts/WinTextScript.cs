@@ -28,5 +28,9 @@ public class WinTextScript : MonoBehaviour {
         {
             winner.text = "PLAYER 2 IS THE WINNER";
         }
+        else if(Player1ScoreScript.player1Score == Player2ScoreScript.player2Score)
+        {
+            winner.text = "DRAW!";
+        }
     }
 }

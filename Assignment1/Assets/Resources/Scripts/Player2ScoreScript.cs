@@ -57,6 +57,7 @@ public class Player2ScoreScript : MonoBehaviour {
         }
 
         print("Player 2 Score: " + player2Score);
+        
 
         ball.transform.position = initialPosition;
         ball.GetComponent<Rigidbody2D>().velocity = new Vector2(speed, -1f);
