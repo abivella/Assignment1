@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Resources\Scripts\BallScript.cs" />
      <Compile Include="Assets\Resources\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\ObstacleScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Player1PaddleScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Player1ScoreScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Player2PaddleScript.cs" />
