@@ -20,11 +20,16 @@ public class Player2ScoreScript : MonoBehaviour {
         initialPosition = zero;
         //print(zero);
         ball = GameObject.FindGameObjectWithTag("ball");
+
+        if (levelManager.GetScene() == "Level1")
+        {
+            player2Score = 0;
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (player2Score == 5)
+        if (goal == 3)
         {
             levelManager.LoadNextScene();
         }
@@ -51,7 +56,6 @@ public class Player2ScoreScript : MonoBehaviour {
             player2Score += 3;
         }
 
-        player2Score++;
         print("Player 2 Score: " + player2Score);
 
         ball.transform.position = initialPosition;
